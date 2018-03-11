@@ -1,1 +1,2 @@
-# udemy-rest-assured-serenity-bdd-framework
+# Rest Assured, Serenity bdd framework
+
