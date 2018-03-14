@@ -242,3 +242,16 @@
   ```
 
 - Untested
+
+##### Reusable steps
+
+............
+
+##### Request/Response  Specifications
+
+..........
+
+##### Data Driven Testing
+
+- [Random Data generator](https://mockaroo.com/)
+

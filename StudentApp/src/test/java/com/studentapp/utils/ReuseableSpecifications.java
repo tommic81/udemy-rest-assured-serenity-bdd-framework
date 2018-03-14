@@ -17,7 +17,7 @@ public class ReuseableSpecifications {
 	public static ResponseSpecBuilder respec;
 	public static ResponseSpecification responseSpecification;
 
-	
+	/*Reusable request Specification. Can be used for setting cookies, headers etc*/
 	public static RequestSpecification getGenericRequestSpec(){
 	
 		rspec = new RequestSpecBuilder();
@@ -26,7 +26,7 @@ public class ReuseableSpecifications {
 		return requestSpecification;
 		
 	}
-	
+	/*Reusable response Specification. Can be used for assertions*/
 	public static ResponseSpecification getGenericResponseSpec(){
 		respec = new ResponseSpecBuilder();
 		respec.expectHeader("Content-Type","application/json;charset=UTF-8");

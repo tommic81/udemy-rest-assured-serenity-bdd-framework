@@ -22,6 +22,7 @@ public class StudentSerenitySteps {
         student.setCourses(courses);
 
         return SerenityRest.rest().given()
+             //using reusable request specification
             .spec(ReuseableSpecifications.getGenericRequestSpec())
             .when()
             .body(student)
