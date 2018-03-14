@@ -21,7 +21,7 @@ public class StudentSerenitySteps {
         student.setProgramme(programme);
         student.setCourses(courses);
 
-        return	SerenityRest.rest().given()
+        return SerenityRest.rest().given()
             .spec(ReuseableSpecifications.getGenericRequestSpec())
             .when()
             .body(student)
@@ -30,11 +30,11 @@ public class StudentSerenitySteps {
     }
 
     @Step("Getting the student information with firstName: {0}")
-    public HashMap<String,Object> getStudentInfoByFirstName(String firstName) {
+    public HashMap<String, Object> getStudentInfoByFirstName(String firstName) {
         String p1 = "findAll{it.firstName=='";
         String p2 = "'}.get(0)";
 
-        return	SerenityRest.rest().given()
+        return SerenityRest.rest().given()
             .when()
             .get("/list")
             .then()
@@ -42,7 +42,7 @@ public class StudentSerenitySteps {
             .all()
             .statusCode(200)
             .extract()
-            .path(p1+firstName+p2);
+            .path(p1 + firstName + p2);
     }
 
     @Step("Updating student information with studnetID: {0} firstName:{1}, lastName:{2}, email:{3},programme: {4} ,courses:{5}")
@@ -59,9 +59,19 @@ public class StudentSerenitySteps {
             .when().body(student).put("/" + studentId).then();
     }
 
+    @Step("Deleting student information with ID: {0}")
     public void deleteStudent(int studentId) {
+        SerenityRest.rest().given().when().delete("/" + studentId);
     }
 
-    public RestAssuredResponseOptionsGroovyImpl getStudentById(int studentId) {
+    @Step("Getting information of the student with ID: {0}")
+    public ValidatableResponse getStudentById(int studentId){
+        return
+            SerenityRest
+                .rest()
+                .given()
+                .when()
+                .get("/" + studentId).then();
+
     }
 }

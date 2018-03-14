@@ -37,11 +37,7 @@
     </pluginRepositories>
 
     <dependencies>
-      <!--  <dependency>
-            <groupId>net.serenity-bdd</groupId>
-            <artifactId>core</artifactId>
-            <version>${serenity.version}</version>
-        </dependency>-->
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>

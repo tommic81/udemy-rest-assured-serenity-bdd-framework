@@ -1,13 +1,10 @@
 package com.studentapp.junit.studentsinfo;
 
-import com.serenityrestassured.model.StudentClass;
 import com.studentapp.cucumber.serenity.StudentSerenitySteps;
 import com.studentapp.testbase.TestBase;
 import com.studentapp.utils.ReuseableSpecifications;
 import com.studentapp.utils.TestUtils;
-import io.restassured.http.ContentType;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
 import org.junit.Test;
@@ -16,8 +13,8 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.hasValue;
+import static org.junit.Assert.assertThat;
 
 @RunWith(SerenityRunner.class)
 public class StudentsCRUDTest extends TestBase {
