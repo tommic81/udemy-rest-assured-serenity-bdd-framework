@@ -5,6 +5,7 @@ import com.studentapp.testbase.TestBase;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.Title;
+import net.thucydides.junit.annotations.Concurrent;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,6 +13,7 @@ import org.junit.runner.RunWith;
 import java.util.ArrayList;
 import java.util.List;
 
+@Concurrent(threads = "4x")
 @UseTestDataFrom("testdata/studentinfo.csv")
 //Test will be executed multiple times
 @RunWith(SerenityParameterizedRunner.class)
