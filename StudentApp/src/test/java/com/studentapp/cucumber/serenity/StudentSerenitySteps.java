@@ -1,7 +1,7 @@
 package com.studentapp.cucumber.serenity;
 
 import com.serenityrestassured.model.StudentClass;
-import com.studentapp.utils.ReuseableSpecifications;
+import com.studentapp.utils.ReusableSpecifications;
 import io.restassured.response.ValidatableResponse;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -22,8 +22,8 @@ public class StudentSerenitySteps {
         student.setCourses(courses);
 
         return SerenityRest.rest().given()
-             //using reusable request specification
-            .spec(ReuseableSpecifications.getGenericRequestSpec())
+            //using reusable request specification
+            .spec(ReusableSpecifications.getGenericRequestSpec())
             .when()
             .body(student)
             .post()
@@ -56,7 +56,7 @@ public class StudentSerenitySteps {
         student.setCourses(courses);
 
         return SerenityRest.rest().given()
-            .spec(ReuseableSpecifications.getGenericRequestSpec()).log().all()
+            .spec(ReusableSpecifications.getGenericRequestSpec()).log().all()
             .when().body(student).put("/" + studentId).then();
     }
 
@@ -66,7 +66,7 @@ public class StudentSerenitySteps {
     }
 
     @Step("Getting information of the student with ID: {0}")
-    public ValidatableResponse getStudentById(int studentId){
+    public ValidatableResponse getStudentById(int studentId) {
         return
             SerenityRest
                 .rest()

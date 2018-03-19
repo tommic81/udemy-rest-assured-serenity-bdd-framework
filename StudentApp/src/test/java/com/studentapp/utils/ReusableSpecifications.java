@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 
 import java.util.concurrent.TimeUnit;
 
-public class ReuseableSpecifications {
+public class ReusableSpecifications {
 	
 	public static RequestSpecBuilder rspec;
 	public static RequestSpecification requestSpecification;

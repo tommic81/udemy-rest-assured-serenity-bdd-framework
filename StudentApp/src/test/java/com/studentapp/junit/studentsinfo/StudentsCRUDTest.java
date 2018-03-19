@@ -2,7 +2,8 @@ package com.studentapp.junit.studentsinfo;
 
 import com.studentapp.cucumber.serenity.StudentSerenitySteps;
 import com.studentapp.testbase.TestBase;
-import com.studentapp.utils.ReuseableSpecifications;
+import com.studentapp.utils.ReusableSpecifications;
+
 import com.studentapp.utils.TestUtils;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
@@ -67,7 +68,7 @@ public class StudentsCRUDTest extends TestBase {
 
         steps.createStudent(firstName, lastName, email, programme, courses)
             .statusCode(201)
-            .spec(ReuseableSpecifications.getGenericResponseSpec());
+            .spec(ReusableSpecifications.getGenericResponseSpec());
 
 
     }
